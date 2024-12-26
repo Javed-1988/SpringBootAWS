@@ -12,6 +12,6 @@ public class StudentController {
     @GetMapping("/")
     public String helloAws()
     {
-        return "Welcome to Springboot with AWS";
+        return "Welcome to Spring boot with AWS....";
     }
 }

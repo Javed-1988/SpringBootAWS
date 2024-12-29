@@ -1,31 +1,13 @@
 version: 0.2
-
 phases:
-  install:
-    runtime-versions:
-      java: openjdk17 # Set to your required Java version
-    commands:
-      # Install dependencies if necessary
-      echo Installing Maven...
-      mvn -v # Check Maven version
-  pre_build:
-    commands:
-      echo Setting up environment...
-      echo "No pre-build steps"
   build:
     commands:
-      echo Building Spring Boot application...
-      mvn clean install -DskipTests=true # Skip tests for faster builds, modify as needed
+      - echo Packaging JAR file...
+      - mvn clean package
   post_build:
     commands:
-      echo Build completed. Preparing to deploy...
-      # Optionally, you could upload the artifact to S3 or create a Docker image for ECS
-      echo "Artifact generated"
-
+      - echo Build complete.
 artifacts:
   files:
-    - target/SpringBootAWS.jar # Location of the Spring Boot JAR file (after `mvn clean install`)
-
-cache:
-  paths:
-    - '/root/.m2/**/*' # Cache Maven dependencies to speed up builds
+    - target/SpringBootAWS.jar
+  discard-paths: yes

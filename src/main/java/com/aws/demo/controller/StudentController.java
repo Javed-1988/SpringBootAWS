@@ -17,8 +17,8 @@ public class StudentController {
     }
 
     @GetMapping("/add")
-    public String add(@PathVariable int number)
+    public String add()
     {
-        return String.valueOf(number*2);
+        return "adding add method";
     }
 }

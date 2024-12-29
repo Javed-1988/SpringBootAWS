@@ -16,9 +16,9 @@ public class StudentController {
         return "Welcome to Spring boot with AWS with Bean Stalk with cicd pipeline....";
     }
 
-    @GetMapping("/add")
-    public String add()
+    @GetMapping("/add/{id}")
+    public int add(@PathVariable int id)
     {
-        return "adding add method";
+        return id*2;
     }
 }

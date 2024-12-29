@@ -12,6 +12,6 @@ public class StudentController {
     @GetMapping("/")
     public String helloAws()
     {
-        return "Welcome to Spring boot with AWS with Bean Stalk....";
+        return "Welcome to Spring boot with AWS with Bean Stalk with cicd pipeline....";
     }
 }
